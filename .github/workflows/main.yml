@@ -1,9 +1,15 @@
-name: MyAutoPipeline
-on: [push]  # 
+name: Master Branch Pipeline
+
+on:
+  push:
+    branches: [ master ]  # 
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: echo "Success! Pipeline will start automatic!"
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Hello Message
+        run: echo "Master branch pipeline successfully triggered!"
