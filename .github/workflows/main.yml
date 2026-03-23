@@ -1,0 +1,9 @@
+name: MyAutoPipeline
+on: [push]  # 
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Success! Pipeline will start automatic!"
